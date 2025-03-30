@@ -33,3 +33,25 @@ def get_segmentation(mask):
     mask.putpalette(PALETTE.reshape(-1).tolist())
 
     return mask
+
+# measure F1-score on training/validation datasets during epoches
+# input: (512, 512) numpy.array?
+def compute_multiclass_fscore(mask_gt, mask_pred, beta=1):
+    f_scores = []
+
+    for class_id in np.unique(mask_gt):
+        tp = np.sum((mask_gt == class_id) & (mask_pred == class_id))
+        fp = np.sum((mask_gt != class_id) & (mask_pred == class_id))
+        fn = np.sum((mask_gt == class_id) & (mask_pred != class_id))
+
+        precision = tp / (tp + fp + 1e-7)
+        recall = tp / (tp + fn + 1e-7)
+        f_score = (
+            (1 + beta**2)
+            * (precision * recall)
+            / ((beta**2 * precision) + recall + 1e-7)
+        )
+
+        f_scores.append(f_score)
+
+    return np.mean(f_scores)
