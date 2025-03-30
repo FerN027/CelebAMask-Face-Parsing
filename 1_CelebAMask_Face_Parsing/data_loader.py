@@ -101,7 +101,7 @@ def get_dataloader(is_train: bool):
             mask_transform=mask_transforms
         )
 
-        return DataLoader(dataset, batch_size=4, shuffle=True, num_workers=2)
+        return DataLoader(dataset, batch_size=8, shuffle=True, num_workers=2, pin_memory=True)
     
     else:
         dataset = FaceParsingDataset(
@@ -110,4 +110,4 @@ def get_dataloader(is_train: bool):
             image_transform=image_transforms
         )
 
-        return DataLoader(dataset, batch_size=4, shuffle=False, num_workers=2)
+        return DataLoader(dataset, batch_size=8, shuffle=False, num_workers=2)

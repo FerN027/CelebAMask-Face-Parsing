@@ -1,6 +1,6 @@
-from data_loader import get_dataloader
-
-
+import torch
+from train import train
 
 if __name__ == "__main__":
-    a = 1
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    train(device=device)
