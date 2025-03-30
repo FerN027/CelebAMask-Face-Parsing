@@ -1,1 +1,1 @@
-# Project 2 - Blind Face Super-Resolution
+## Project 2 - Blind Face Super-Resolution
