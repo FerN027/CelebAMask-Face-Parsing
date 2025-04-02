@@ -110,4 +110,8 @@ def get_dataloader(is_train: bool):
             image_transform=image_transforms
         )
 
-        return DataLoader(dataset, batch_size=8, shuffle=False, num_workers=2)
+        # the name for each test image is also needed for mask naming
+        names = dataset.image_files
+        names = [name.split('.')[0] + '.png' for name in names]
+
+        return DataLoader(dataset, batch_size=8, shuffle=False, num_workers=2), names
