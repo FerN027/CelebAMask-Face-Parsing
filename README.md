@@ -1,1 +1,1 @@
-## Project 1 - CelebAMask Face Parsing
+# CelebAMask Face Parsing
