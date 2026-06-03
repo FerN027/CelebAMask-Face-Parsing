@@ -7,7 +7,7 @@ This repository contains the official implementation of a state-of-the-art, high
 - [Architectural Innovations](#architectural-innovations)
 - [Data Ecosystem](#data-ecosystem)
 - [Training & Deployment Pipelines](#training--deployment-pipelines)
-- [Formidable Performance](#formidable-performance)
+- [Performance](#performance)
 
 ## Project Overview
 Tackling the highly complex multi-class semantic segmentation domain, this framework operates on the rigorous **CelebAMask-HQ** benchmark. By replacing conventional heavy backbones with a strategically designed U-Net-like paradigm, the model achieves deep semantic understanding of facial geometry while maintaining an exceptionally lightweight footprint suitable for versatile deployments.
