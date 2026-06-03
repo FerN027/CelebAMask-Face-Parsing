@@ -52,7 +52,7 @@ python test.py
 ```
 The framework loads the verified checkpoint and synthesizes `.png` maps inside `data/test-public/test/predicted_masks`, ready for downstream analytics.
 
-## Formidable Performance
+## Performance
 The architecture underwent stringent evaluation using the rigorous Multi-Class F1-Score metric.
 - **Optimization Strategy:** Standard rigorous `nn.CrossEntropyLoss()` surprisingly yielded the optimal decision boundaries across all 19 heterogeneous classes, outperforming weighted class balancing.
 - **Benchmark F1-Score:** The model achieved an outstanding F-measure of **0.81** on the fiercely competitive Codabench evaluation suite, securing a highly confident predictive baseline.
